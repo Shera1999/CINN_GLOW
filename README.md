@@ -1,12 +1,11 @@
-# CINN_GLOW
 # Conditional Invertible Neural Networks for Galaxy‑Cluster Merger History
 
-Welcome to **cINN‑Clusters**, a reproducible pipeline that predicts hidden merger properties of galaxy clusters from observable quantities using a *Conditional Invertible Neural Network* (cINN).
+Welcome to **cINN‑Clusters**, a reproducible pipeline that predicts hidden merger properties of galaxy clusters from observable X‑ray quantities using a *Conditional Invertible Neural Network* (cINN).
 The repository also includes a benchmark MLP ensemble, extensive posterior‑diagnostic plots, and a feature‑sensitivity analysis.
 
 ---
 
-## Directory Structure
+## 🌐 Directory Structure
 
 ```
 CINN_GLOW/
@@ -34,11 +33,11 @@ All code lives inside the \`\` sub‑directory; feel free to reorganise later (e
 
 ---
 
-##  Installation
+## ⚙️  Installation
 
 ```bash
 # clone & enter
-git clone 
+git clone <repo‑url> cinn_project
 cd cinn_project
 
 # create env & install deps
@@ -57,7 +56,7 @@ CUDA is auto‑detected if available.
 
 ---
 
-## Data Preparation
+## 📊 Data Preparation
 
 ```bash
 python data_filter.py \
@@ -71,7 +70,7 @@ python data_filter.py \
 
 ---
 
-## Training the cINN
+## 🧩 Training the cINN
 
 ```bash
 python train_cinn.py \
@@ -88,7 +87,7 @@ python train_cinn.py \
 
 ---
 
-##  Baseline MLP Ensemble & Sensitivity
+## 🏷️  Baseline MLP Ensemble & Sensitivity
 
 ```bash
 python mlp_baseline.py --processed_dir processed_data
@@ -100,7 +99,7 @@ python mlp_baseline.py --processed_dir processed_data
 
 ---
 
-## Generating Figures
+## 📈 Generating Figures
 
 All plotting scripts assume:
 
@@ -131,16 +130,28 @@ posterior_distribution.png
 
 ---
 
-##  Figure Gallery (quick preview)
+## 🖼️  Figure Gallery
 
-| #  | File                           | Insight                                                                        |       |                            |
-| -- | ------------------------------ | ------------------------------------------------------------------------------ | ----- | -------------------------- |
-| 1  | posterior\_distribution.png    | Side‑by‑side prior/posterior comparison with MAP + truth per cluster.          |       |                            |
-| 2a | 2.prediction\_performance1.png | Heat‑maps of how posteriors shift relative to prior bins across targets.       |       |                            |
-| 2b | 2.prediction\_performance2.png | MAP accuracy & error distribution as a function of ground‑truth value.         |       |                            |
-| 3  | 3.uncertainities.png           | Checks correlation between predicted σ and actual                              | error | (uncertainty calibration). |
-| 4  | 4.cross\_correlations.png      | Joint distributions (truth, posterior, MAP) for every target pair.             |       |                            |
-| 5  | 5.sensitivity\_analysis.png    | Which observables most influence MAE for each target (ensemble ablation test). |       |                            |
+Below is a quick visual preview of every figure produced by the pipeline.  Each image is down‑scaled for the README; click to view full resolution.
 
+| #       | Visualisation                                                 | Insight                                                                                                                                            |             |                                                               |
+| ------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------- |
+| **1**   | <img src="scalar/1.posterior_distrubution.png" width="260"/>  | **Prior vs Posterior** — KDE curves for prior (grey), posterior (blue), MAP (gold) and ground‑truth (red) for every cluster and target (Figure 1). |             |                                                               |
+| **2 a** | <img src="scalar/2.prediction_performance1.png" width="260"/> | **Posterior Heat‑maps** — How predicted posteriors shift relative to prior bins across all targets (Figure 2a).                                    |             |                                                               |
+| **2 b** | <img src="scalar/2.prediction_performance2.png" width="260"/> | **MAP & Error Trends** — Ground‑truth vs MAP (top) and absolute error trends (bottom) with percentile bands (Figure 2b).                           |             |                                                               |
+| **3**   | <img src="scalar/3.uncertainities.png" width="260"/>          | **Uncertainty Calibration** —                                                                                                                      | MAP − truth | versus posterior σ with Gaussian reference curves (Figure 3). |
+| **4**   | <img src="scalar/4.cross_correlations.png" width="260"/>      | **Cross‑correlations** — Pairwise scatter of truth, posterior samples and MAP predictions for every target pair (Figure 4).                        |             |                                                               |
+| **5**   | <img src="scalar/5.sensitivity_analysis.png" width="260"/>    | **Feature Sensitivity** — Δ MAE heat‑map showing which observables most influence each target (Figure 5).                                          |             |                                                               |
 
+---
 
+## 🤝 Contributing & Issues Contributing & Issues
+
+Pull requests and bug reports are welcome.
+Please open an issue for questions or feature requests.
+
+---
+
+## 📄 License
+
+MIT License © 2025 Your Name
