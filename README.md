@@ -5,7 +5,7 @@ The repository also includes a benchmark MLP ensemble, extensive posterior‑dia
 
 ---
 
-## 🌐 Directory Structure
+## Directory Structure
 
 ```
 CINN_GLOW/
@@ -33,7 +33,7 @@ All code lives inside the \`\` sub‑directory; feel free to reorganise later (e
 
 ---
 
-## ⚙️  Installation
+##  Installation
 
 ```bash
 # clone & enter
@@ -56,7 +56,7 @@ CUDA is auto‑detected if available.
 
 ---
 
-## 📊 Data Preparation
+## Data Preparation
 
 ```bash
 python data_filter.py \
@@ -70,7 +70,7 @@ python data_filter.py \
 
 ---
 
-## 🧩 Training the cINN
+## Training the cINN
 
 ```bash
 python train_cinn.py \
@@ -87,7 +87,7 @@ python train_cinn.py \
 
 ---
 
-## 🏷️  Baseline MLP Ensemble & Sensitivity
+##  Baseline MLP Ensemble & Sensitivity
 
 ```bash
 python mlp_baseline.py --processed_dir processed_data
@@ -99,7 +99,7 @@ python mlp_baseline.py --processed_dir processed_data
 
 ---
 
-## 📈 Generating Figures
+## Generating Figures
 
 All plotting scripts assume:
 
@@ -130,28 +130,48 @@ posterior_distribution.png
 
 ---
 
-## 🖼️  Figure Gallery
+##  Figure Gallery
 
-Below is a quick visual preview of every figure produced by the pipeline.  Each image is down‑scaled for the README; click to view full resolution.
+Below are full‑width previews of every figure produced by the pipeline.  Click any image for the high‑resolution version.
 
-| #       | Visualisation                                                 | Insight                                                                                                                                            |             |                                                               |
-| ------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------- |
-| **1**   | <img src="scalar/1.posterior_distrubution.png" width="260"/>  | **Prior vs Posterior** — KDE curves for prior (grey), posterior (blue), MAP (gold) and ground‑truth (red) for every cluster and target (Figure 1). |             |                                                               |
-| **2 a** | <img src="scalar/2.prediction_performance1.png" width="260"/> | **Posterior Heat‑maps** — How predicted posteriors shift relative to prior bins across all targets (Figure 2a).                                    |             |                                                               |
-| **2 b** | <img src="scalar/2.prediction_performance2.png" width="260"/> | **MAP & Error Trends** — Ground‑truth vs MAP (top) and absolute error trends (bottom) with percentile bands (Figure 2b).                           |             |                                                               |
-| **3**   | <img src="scalar/3.uncertainities.png" width="260"/>          | **Uncertainty Calibration** —                                                                                                                      | MAP − truth | versus posterior σ with Gaussian reference curves (Figure 3). |
-| **4**   | <img src="scalar/4.cross_correlations.png" width="260"/>      | **Cross‑correlations** — Pairwise scatter of truth, posterior samples and MAP predictions for every target pair (Figure 4).                        |             |                                                               |
-| **5**   | <img src="scalar/5.sensitivity_analysis.png" width="260"/>    | **Feature Sensitivity** — Δ MAE heat‑map showing which observables most influence each target (Figure 5).                                          |             |                                                               |
+### 1  Prior vs Posterior (Figure 1)
+
+![Prior vs Posterior](scalar/1.posterior_distrubution.png)
+*Side‑by‑side KDE curves of the population prior (grey dashed), model posterior (blue), MAP estimate (gold), and ground truth (red) for every cluster and target.*
 
 ---
 
-## 🤝 Contributing & Issues Contributing & Issues
+### 2a  Posterior Heat‑maps (Figure 2a)
 
-Pull requests and bug reports are welcome.
-Please open an issue for questions or feature requests.
+![Posterior Heat‑maps](scalar/2.prediction_performance1.png)
+*2‑D heat‑maps of prior bin → posterior bin counts, overlaid with median (solid) and 10th/90th percentile (dashed) lines for each target.*
 
 ---
 
-## 📄 License
+### 2b  MAP & Error Trends (Figure 2b)
 
-MIT License © 2025 Your Name
+![MAP & Error Trends](scalar/2.prediction_performance2.png)
+*Top row: Ground‑truth vs MAP predictions.  Bottom row: Absolute error vs truth (symlog scale) with 16th/84th percentile bands.*
+
+---
+
+### 3  Uncertainty Calibration (Figure 3)
+
+![Uncertainty Calibration](scalar/3.uncertainities.png)
+*Scatter of |MAP − truth| versus posterior σ, including Gaussian reference curves and binned 68th/95th percentile error lines.*
+
+---
+
+### 4  Cross‑correlations (Figure 4)
+
+![Cross‑correlations](scalar/4.cross_correlations.png)
+*Staircase grid of pairwise scatter plots showing joint distributions of truth (red), posterior samples (light‑blue), and MAP predictions (mustard) for every target pair.*
+
+---
+
+### 5  Feature Sensitivity (Figure 5)
+
+![Feature Sensitivity](scalar/5.sensitivity_analysis.png)
+*Log‑scaled Δ MAE heat‑map indicating how omitting each observable affects prediction error for each target.*
+
+---
