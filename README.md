@@ -132,7 +132,18 @@ posterior_distribution.png
 
 ##  Figure Gallery
 
+<<<<<<< HEAD
 Below are full‑width previews of every figure produced by the pipeline.  Click any image for the high‑resolution version.
+=======
+| #  | File                           | Insight                                                                        
+| -- | ------------------------------ | ------------------------------------------------------------------------------ 
+| 1  | posterior\_distribution.png    | Side‑by‑side prior/posterior comparison with MAP + truth per cluster.          
+| 2a | 2.prediction\_performance1.png | Heat‑maps of how posteriors shift relative to prior bins across targets.       
+| 2b | 2.prediction\_performance2.png | MAP accuracy & error distribution as a function of ground‑truth value.         
+| 3  | 3.uncertainities.png           | Checks correlation between predicted σ and actual                              
+| 4  | 4.cross\_correlations.png      | Joint distributions (truth, posterior, MAP) for every target pair.             
+| 5  | 5.sensitivity\_analysis.png    | Which observables most influence MAE for each target (ensemble ablation test). 
+>>>>>>> ce63deb (scalar_glow)
 
 ### 1  Prior vs Posterior (Figure 1)
 
