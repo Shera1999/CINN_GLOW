@@ -106,15 +106,14 @@ All plotting scripts assume:
 * `best_cluster_cinn.pt` exists in project root.
 * `processed_data/` contains the pre‑processed CSVs & scalers.
 
-Run any script directly, e.g.
+Run any script inside the jupyter notebook files:
 
 ```bash
-python plotting/posterior_distribution.py            # Fig. 1  prior v posterior grid
-python plotting/plot_posteriors_all_targets.py       # Fig. 2a heat‑maps
-python plotting/plot_map_and_error_vs_truth.py       # Fig. 2b truth v MAP
-python plotting/plot_error_vs_std_scatter.py         # Fig. 3  calibration
-python plotting/plot_pairwise_all_three.py           # Fig. 4  pairwise correlations
-python plotting/sensitivity_heatmap.py               # Fig. 5  feature sensitivity
+1.posterior_distribution.ipynb       # Fig. 1  prior v posterior grid
+2.prediction_performance.ipynb       # Fig. 2a heat‑maps, Fig. 2b truth v MAP
+3.uncertainities.ipynb               # Fig. 3  calibration
+4.cross_correlation.ipynb            # Fig. 4  pairwise correlations
+5.sensitivity_analysis.ipynb         # Fig. 5  feature sensitivity
 ```
 
 Each script saves a high‑resolution PNG (and commented‑out PDF) in the repo root with intuitive file names:
@@ -143,7 +142,6 @@ Below are full‑width previews of every figure produced by the pipeline.  Click
 | 3  | 3.uncertainities.png           | Checks correlation between predicted σ and actual                              
 | 4  | 4.cross\_correlations.png      | Joint distributions (truth, posterior, MAP) for every target pair.             
 | 5  | 5.sensitivity\_analysis.png    | Which observables most influence MAE for each target (ensemble ablation test). 
->>>>>>> ce63deb (scalar_glow)
 
 ### 1  Prior vs Posterior (Figure 1)
 
